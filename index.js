@@ -1,8 +1,9 @@
 
+const time = document.querySelector('.time');
 const allCoins = document.querySelectorAll('.coin-button');
-const fiveCent = document.getElementById('five-cent');
-const tenCent = document.getElementById('ten-cent');
-
+const ticketButton = document.querySelector('.ticket-button');
+const output = document.querySelector('.output');
+const reset = document.querySelector('.reset-button');
 let timeValue = 0;
 
 allCoins.forEach(coin => {
@@ -26,6 +27,14 @@ allCoins.forEach(coin => {
                 timeValue += 200;
                 break;
         }
-        console.log(timeValue);
+        time.innerText = `Time: ${timeValue}min`;
     })
 })
+ticketButton.onclick = () => {
+    output.innerHTML = `You have drawn a ticket that allows you to park here for: <b>${timeValue}min</b>`;
+}
+reset.onclick = () => {
+    timeValue = 0;
+    time.innerText = `Time: ${timeValue}min`;
+    output.innerText = '';
+}
