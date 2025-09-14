@@ -1,2 +1,2 @@
-# Fahrkartenautomat
+# ticket machine
 
